@@ -26,6 +26,7 @@
 		391531A122286A8900EE5574 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3915319D22286A8900EE5574 /* ApiManager.swift */; };
 		391531A322286A8900EE5574 /* PendingTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3915319F22286A8900EE5574 /* PendingTask.swift */; };
 		391531A422286A8900EE5574 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531A022286A8900EE5574 /* RequestManager.swift */; };
+		391531A92228725000EE5574 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531A82228725000EE5574 /* DatabaseManager.swift */; };
 		47BB57EFDCB21A2D51DED10A /* Pods_ECommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F180F40C623D01B76CC8EC /* Pods_ECommerce.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		3915319D22286A8900EE5574 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		3915319F22286A8900EE5574 /* PendingTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTask.swift; sourceTree = "<group>"; };
 		391531A022286A8900EE5574 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		391531A82228725000EE5574 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		CB5FC6F0BCC9D9D9F46BEE50 /* Pods-ECommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-ECommerce/Pods-ECommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E6F180F40C623D01B76CC8EC /* Pods_ECommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 		3915316A22285D5700EE5574 /* ECommerce */ = {
 			isa = PBXGroup;
 			children = (
+				391531A72228723500EE5574 /* Database */,
 				3915319C22286A6300EE5574 /* APIManager */,
 				3915318A2228667400EE5574 /* Utilities */,
 				391531872228649F00EE5574 /* ViewModels */,
@@ -107,7 +110,6 @@
 				3915317522285D5800EE5574 /* Assets.xcassets */,
 				3915317722285D5800EE5574 /* LaunchScreen.storyboard */,
 				3915317A22285D5800EE5574 /* Info.plist */,
-				3915317222285D5700EE5574 /* ECommerce.xcdatamodeld */,
 			);
 			path = ECommerce;
 			sourceTree = "<group>";
@@ -175,6 +177,15 @@
 				391531A022286A8900EE5574 /* RequestManager.swift */,
 			);
 			path = APIManager;
+			sourceTree = "<group>";
+		};
+		391531A72228723500EE5574 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				3915317222285D5700EE5574 /* ECommerce.xcdatamodeld */,
+				391531A82228725000EE5574 /* DatabaseManager.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		EE4AEEA3EC5ED655D0E6A241 /* Pods */ = {
@@ -305,6 +316,7 @@
 				391531A322286A8900EE5574 /* PendingTask.swift in Sources */,
 				3915318C2228668A00EE5574 /* Utility.swift in Sources */,
 				39153189222865DB00EE5574 /* CategoryViewModel.swift in Sources */,
+				391531A92228725000EE5574 /* DatabaseManager.swift in Sources */,
 				391531952228693000EE5574 /* ProductCategory.swift in Sources */,
 				3915316C22285D5700EE5574 /* AppDelegate.swift in Sources */,
 				391531982228693000EE5574 /* Tax.swift in Sources */,
