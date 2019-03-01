@@ -1,5 +1,5 @@
 //
-//  CategoryViewController.swift
+//  SubCategoryViewController.swift
 //  ECommerce
 //
 //  Created by Ashwin Gattani on 01/03/19.
@@ -8,55 +8,52 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class SubCategoryViewController: UIViewController {
 
-    @IBOutlet weak var categoryTableView: UITableView!
+    @IBOutlet weak var subCategoryTableView: UITableView!
+    
+    var subCategory = [ProductCategory]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.categoryTableView.tableFooterView = UIView.init()
-        
         // Do any additional setup after loading the view.
-        CategoryViewModel.sharedInstance.fetchProductsList()
+        self.subCategoryTableView.tableFooterView = UIView.init()
         
-        CategoryViewModel.sharedInstance.reloadData = {
-            DispatchQueue.main.async {
-                self.categoryTableView.reloadData()
-            }
-        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 
-extension CategoryViewController: UITableViewDataSource
+extension SubCategoryViewController: UITableViewDataSource
 {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CategoryViewModel.sharedInstance.topCategory.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return subCategory.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.selectionStyle = .none
-        let category: ProductCategory = CategoryViewModel.sharedInstance.topCategory[indexPath.row]
+        
+        let category: ProductCategory = self.subCategory[indexPath.row]
         cell?.textLabel?.text = category.name
         return cell!
-        
     }
 }
 
-extension CategoryViewController: UITableViewDelegate {
+extension SubCategoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category: ProductCategory = CategoryViewModel.sharedInstance.topCategory[indexPath.row]
-        
-        // If Child Categories Count is Greater than 0 and Product List equal to 0, Subcategory Exist
+        let category: ProductCategory = self.subCategory[indexPath.row]
+
+        // Check if subcategory Exists
         if category.child_categories.count > 0 && category.productList.count == 0 {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryViewController") as! SubCategoryViewController
             vc.subCategory = CategoryViewModel.sharedInstance.fetchSubCategoryList(category: category)
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else if category.child_categories.count == 0 && category.productList.count > 0 {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProductsListViewController") as! ProductsListViewController
+            vc.subCategory = self.subCategory
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

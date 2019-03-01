@@ -26,7 +26,13 @@
 		391531A122286A8900EE5574 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3915319D22286A8900EE5574 /* ApiManager.swift */; };
 		391531A322286A8900EE5574 /* PendingTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3915319F22286A8900EE5574 /* PendingTask.swift */; };
 		391531A422286A8900EE5574 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531A022286A8900EE5574 /* RequestManager.swift */; };
+		391531A622286F9700EE5574 /* SubCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531A522286F9700EE5574 /* SubCategoryViewController.swift */; };
 		391531A92228725000EE5574 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531A82228725000EE5574 /* DatabaseManager.swift */; };
+		391531AD2228ECF700EE5574 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531AB2228ECF700EE5574 /* ProductDetailViewController.swift */; };
+		391531AE2228ECF700EE5574 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531AC2228ECF700EE5574 /* ProductsListViewController.swift */; };
+		391531B32228ED5800EE5574 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531B02228ED5800EE5574 /* ProductListCell.swift */; };
+		391531B42228ED5800EE5574 /* ProductRankListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531B12228ED5800EE5574 /* ProductRankListCell.swift */; };
+		391531B52228ED5800EE5574 /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531B22228ED5800EE5574 /* ProductDetailCell.swift */; };
 		47BB57EFDCB21A2D51DED10A /* Pods_ECommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F180F40C623D01B76CC8EC /* Pods_ECommerce.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +59,13 @@
 		3915319D22286A8900EE5574 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		3915319F22286A8900EE5574 /* PendingTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTask.swift; sourceTree = "<group>"; };
 		391531A022286A8900EE5574 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		391531A522286F9700EE5574 /* SubCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryViewController.swift; sourceTree = "<group>"; };
 		391531A82228725000EE5574 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		391531AB2228ECF700EE5574 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		391531AC2228ECF700EE5574 /* ProductsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
+		391531B02228ED5800EE5574 /* ProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		391531B12228ED5800EE5574 /* ProductRankListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRankListCell.swift; sourceTree = "<group>"; };
+		391531B22228ED5800EE5574 /* ProductDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
 		CB5FC6F0BCC9D9D9F46BEE50 /* Pods-ECommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-ECommerce/Pods-ECommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E6F180F40C623D01B76CC8EC /* Pods_ECommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -104,6 +116,7 @@
 				3915318A2228667400EE5574 /* Utilities */,
 				391531872228649F00EE5574 /* ViewModels */,
 				3915318D2228689D00EE5574 /* Models */,
+				391531AF2228ED3D00EE5574 /* Views */,
 				39153180222861C900EE5574 /* View Controllers */,
 				3915316B22285D5700EE5574 /* AppDelegate.swift */,
 				3915316F22285D5700EE5574 /* Main.storyboard */,
@@ -117,6 +130,7 @@
 		39153180222861C900EE5574 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				391531AA2228ECC900EE5574 /* Product */,
 				391531842228640A00EE5574 /* Ranking */,
 				39153183222863FF00EE5574 /* Category */,
 			);
@@ -127,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				39153181222863BE00EE5574 /* CategoryViewController.swift */,
+				391531A522286F9700EE5574 /* SubCategoryViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -186,6 +201,25 @@
 				391531A82228725000EE5574 /* DatabaseManager.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		391531AA2228ECC900EE5574 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				391531AB2228ECF700EE5574 /* ProductDetailViewController.swift */,
+				391531AC2228ECF700EE5574 /* ProductsListViewController.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		391531AF2228ED3D00EE5574 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				391531B22228ED5800EE5574 /* ProductDetailCell.swift */,
+				391531B02228ED5800EE5574 /* ProductListCell.swift */,
+				391531B12228ED5800EE5574 /* ProductRankListCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EE4AEEA3EC5ED655D0E6A241 /* Pods */ = {
@@ -311,19 +345,25 @@
 			files = (
 				391531A422286A8900EE5574 /* RequestManager.swift in Sources */,
 				39153182222863BE00EE5574 /* CategoryViewController.swift in Sources */,
+				391531B32228ED5800EE5574 /* ProductListCell.swift in Sources */,
 				391531962228693000EE5574 /* Product.swift in Sources */,
 				3915317422285D5700EE5574 /* ECommerce.xcdatamodeld in Sources */,
 				391531A322286A8900EE5574 /* PendingTask.swift in Sources */,
 				3915318C2228668A00EE5574 /* Utility.swift in Sources */,
 				39153189222865DB00EE5574 /* CategoryViewModel.swift in Sources */,
+				391531A622286F9700EE5574 /* SubCategoryViewController.swift in Sources */,
 				391531A92228725000EE5574 /* DatabaseManager.swift in Sources */,
 				391531952228693000EE5574 /* ProductCategory.swift in Sources */,
+				391531B42228ED5800EE5574 /* ProductRankListCell.swift in Sources */,
 				3915316C22285D5700EE5574 /* AppDelegate.swift in Sources */,
 				391531982228693000EE5574 /* Tax.swift in Sources */,
 				391531862228642D00EE5574 /* RankingViewController.swift in Sources */,
+				391531B52228ED5800EE5574 /* ProductDetailCell.swift in Sources */,
 				3915319A2228693000EE5574 /* Variant.swift in Sources */,
 				391531A122286A8900EE5574 /* ApiManager.swift in Sources */,
 				391531972228693000EE5574 /* ProductRank.swift in Sources */,
+				391531AE2228ECF700EE5574 /* ProductsListViewController.swift in Sources */,
+				391531AD2228ECF700EE5574 /* ProductDetailViewController.swift in Sources */,
 				391531992228693000EE5574 /* Rankings.swift in Sources */,
 				3915319B2228693000EE5574 /* ProductResponseVO.swift in Sources */,
 			);
