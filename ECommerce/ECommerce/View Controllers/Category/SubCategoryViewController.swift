@@ -16,22 +16,15 @@ class SubCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.subCategoryTableView.tableFooterView = UIView.init()
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
-extension SubCategoryViewController: UITableViewDataSource
-{
+extension SubCategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return subCategory.count
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.selectionStyle = .none
@@ -48,13 +41,14 @@ extension SubCategoryViewController: UITableViewDelegate {
 
         // Check if subcategory Exists
         if category.child_categories.count > 0 && category.productList.count == 0 {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryViewController") as! SubCategoryViewController
-            vc.subCategory = CategoryViewModel.sharedInstance.fetchSubCategoryList(category: category)
-            self.navigationController?.pushViewController(vc, animated: true)
+            let subCategoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryViewController") as! SubCategoryViewController
+            subCategoryViewController.subCategory = CategoryViewModel.sharedInstance.fetchSubCategoryList(category: category)
+            self.navigationController?.pushViewController(subCategoryViewController, animated: true)
         } else if category.child_categories.count == 0 && category.productList.count > 0 {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProductsListViewController") as! ProductsListViewController
-            vc.subCategory = self.subCategory
-            self.navigationController?.pushViewController(vc, animated: true)
+            let productListViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductsListViewController") as! ProductsListViewController
+            productListViewController.subCategory = self.subCategory
+            productListViewController.categoryIndex = indexPath.row
+            self.navigationController?.pushViewController(productListViewController, animated: true)
         }
     }
 }

@@ -33,8 +33,8 @@ extension RankingViewController: UITableViewDataSource {
 
 extension RankingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RankingProductListViewController") as! RankingProductListViewController
-        vc.productRankList = CategoryViewModel.sharedInstance.responseVo.rankings[indexPath.row].productRankList
-        self.navigationController?.pushViewController(vc, animated: true)
+        let rankingProductListViewController = self.storyboard?.instantiateViewController(withIdentifier: "RankingProductListViewController") as! RankingProductListViewController
+        rankingProductListViewController.productRankList = CategoryViewModel.sharedInstance.responseVo.rankings[indexPath.row].productRankList
+        self.navigationController?.pushViewController(rankingProductListViewController, animated: true)
     }
 }

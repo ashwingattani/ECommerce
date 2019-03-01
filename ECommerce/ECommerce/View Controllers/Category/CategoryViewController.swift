@@ -16,25 +16,16 @@ class CategoryViewController: UIViewController {
         super.viewDidLoad()
         self.categoryTableView.tableFooterView = UIView.init()
         
-        // Do any additional setup after loading the view.
         CategoryViewModel.sharedInstance.fetchProductsList()
-        
         CategoryViewModel.sharedInstance.reloadData = {
             DispatchQueue.main.async {
                 self.categoryTableView.reloadData()
             }
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
 
-extension CategoryViewController: UITableViewDataSource
-{
+extension CategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CategoryViewModel.sharedInstance.topCategory.count
     }
@@ -53,11 +44,10 @@ extension CategoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category: ProductCategory = CategoryViewModel.sharedInstance.topCategory[indexPath.row]
         
-        // If Child Categories Count is Greater than 0 and Product List equal to 0, Subcategory Exist
         if category.child_categories.count > 0 && category.productList.count == 0 {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryViewController") as! SubCategoryViewController
-            vc.subCategory = CategoryViewModel.sharedInstance.fetchSubCategoryList(category: category)
-            self.navigationController?.pushViewController(vc, animated: true)
+            let subCategoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubCategoryViewController") as! SubCategoryViewController
+            subCategoryViewController.subCategory = CategoryViewModel.sharedInstance.fetchSubCategoryList(category: category)
+            self.navigationController?.pushViewController(subCategoryViewController, animated: true)
         }
     }
 }

@@ -84,9 +84,9 @@ extension ProductsListViewController: UITableViewDataSource
 extension ProductsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let product: Product = self.productList[indexPath.row]
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as! ProductDetailViewController
-        vc.product = product
-        self.navigationController?.pushViewController(vc, animated: true)
+        let productDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as! ProductDetailViewController
+        productDetailViewController.product = product
+        self.navigationController?.pushViewController(productDetailViewController, animated: true)
     }
 }
 
