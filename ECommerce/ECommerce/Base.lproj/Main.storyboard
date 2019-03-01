@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1589.5999999999999" y="-255.02248875562222"/>
         </scene>
-        <!--Ranking List-->
+        <!--Ranking View Controller-->
         <scene sceneID="BCt-Yz-I3C">
             <objects>
-                <viewController storyboardIdentifier="RankingViewController" id="Mkh-XJ-jt9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RankingViewController" id="Mkh-XJ-jt9" userLabel="Ranking View Controller" customClass="RankingViewController" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ODN-tY-um2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,8 +134,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Mkh-XJ-jt9" id="xJ5-92-0nr"/>
-                                    <outlet property="delegate" destination="Mkh-XJ-jt9" id="eTM-jD-QWj"/>
+                                    <outlet property="dataSource" destination="Mkh-XJ-jt9" id="s2B-79-Pfk"/>
+                                    <outlet property="delegate" destination="Mkh-XJ-jt9" id="F20-ZR-OGl"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -150,7 +150,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Ranking List" id="Vgc-5L-OTP"/>
                     <connections>
-                        <outlet property="tableviewRanking" destination="hpP-hP-d7Y" id="nfT-Pn-TDg"/>
+                        <outlet property="rankingTableView" destination="hpP-hP-d7Y" id="pFv-eh-AGq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ze-Xp-Q2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="2487" y="-255"/>
         </scene>
-        <!--Product List-->
+        <!--Category Product List-->
         <scene sceneID="JoG-ax-Ybi">
             <objects>
-                <viewController storyboardIdentifier="ProductsListViewController" title="Product List" id="5LP-Ld-wdz" customClass="ProductsListViewController" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductsListViewController" title="Product List" id="5LP-Ld-wdz" userLabel="Category Product List" customClass="ProductsListViewController" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EZ4-k4-evj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -404,8 +404,99 @@
             </objects>
             <point key="canvasLocation" x="4263" y="-255"/>
         </scene>
+        <!--Ranking Product List-->
+        <scene sceneID="8gw-uV-KmG">
+            <objects>
+                <viewController storyboardIdentifier="RankingProductListViewController" title="Product List" id="PgY-t5-1jy" userLabel="Ranking Product List" customClass="RankingProductListViewController" customModule="ECommerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oyN-Kx-e1q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fBL-jY-zAl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductRankListCell" rowHeight="97" id="KNf-gm-vEv" customClass="ProductRankListCell" customModule="ECommerce" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="97"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KNf-gm-vEv" id="rC7-2a-OEg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ecommerce" translatesAutoresizingMaskIntoConstraints="NO" id="tUM-x6-rgt">
+                                                    <rect key="frame" x="12" y="9" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="WT1-2T-he3"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViY-uU-ScC">
+                                                    <rect key="frame" x="111" y="55" width="256" height="34"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="vAP-ke-uXB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmZ-4g-INa">
+                                                    <rect key="frame" x="111" y="8" width="256" height="34"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="QJI-mm-CSE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tUM-x6-rgt" firstAttribute="top" secondItem="rC7-2a-OEg" secondAttribute="top" constant="9" id="2ec-m0-SVA"/>
+                                                <constraint firstAttribute="bottom" secondItem="ViY-uU-ScC" secondAttribute="bottom" constant="7.5" id="An0-se-kQv"/>
+                                                <constraint firstItem="hmZ-4g-INa" firstAttribute="top" secondItem="rC7-2a-OEg" secondAttribute="top" constant="8" id="O4y-y1-J7B"/>
+                                                <constraint firstItem="hmZ-4g-INa" firstAttribute="leading" secondItem="tUM-x6-rgt" secondAttribute="trailing" constant="19" id="WMP-2Q-Paw"/>
+                                                <constraint firstItem="tUM-x6-rgt" firstAttribute="leading" secondItem="rC7-2a-OEg" secondAttribute="leading" constant="12" id="eQd-7t-8i5"/>
+                                                <constraint firstAttribute="trailing" secondItem="hmZ-4g-INa" secondAttribute="trailing" constant="8" id="gho-Dl-zSW"/>
+                                                <constraint firstItem="ViY-uU-ScC" firstAttribute="leading" secondItem="tUM-x6-rgt" secondAttribute="trailing" constant="19" id="h19-AZ-QBp"/>
+                                                <constraint firstAttribute="trailing" secondItem="ViY-uU-ScC" secondAttribute="trailing" constant="8" id="ma6-Gt-C72"/>
+                                                <constraint firstAttribute="bottom" secondItem="tUM-x6-rgt" secondAttribute="bottom" constant="7.5" id="qaX-KG-4sO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="countLabel" destination="ViY-uU-ScC" id="c9E-X0-JXS"/>
+                                            <outlet property="imageViewProduct" destination="tUM-x6-rgt" id="8qQ-is-MJ0"/>
+                                            <outlet property="nameLabel" destination="hmZ-4g-INa" id="NCk-yl-rjg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PgY-t5-1jy" id="13K-xf-4XH"/>
+                                    <outlet property="delegate" destination="PgY-t5-1jy" id="kNQ-0R-caz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fBL-jY-zAl" firstAttribute="trailing" secondItem="3tH-R4-41k" secondAttribute="trailing" id="Bsc-kI-EqP"/>
+                            <constraint firstItem="fBL-jY-zAl" firstAttribute="top" secondItem="3tH-R4-41k" secondAttribute="top" id="bb2-Ok-tzF"/>
+                            <constraint firstItem="fBL-jY-zAl" firstAttribute="leading" secondItem="3tH-R4-41k" secondAttribute="leading" id="lbj-Q9-4vW"/>
+                            <constraint firstItem="fBL-jY-zAl" firstAttribute="bottom" secondItem="3tH-R4-41k" secondAttribute="bottom" id="ztn-Zk-D9r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3tH-R4-41k"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="rankListTableView" destination="fBL-jY-zAl" id="yKo-eG-qtY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvc-hR-Vjc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2485.5999999999999" y="447.52623688155927"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ImagePlaceHolder" width="16" height="16"/>
+        <image name="ecommerce" width="1920" height="1080"/>
     </resources>
 </document>

@@ -33,6 +33,7 @@
 		391531B32228ED5800EE5574 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531B02228ED5800EE5574 /* ProductListCell.swift */; };
 		391531B42228ED5800EE5574 /* ProductRankListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531B12228ED5800EE5574 /* ProductRankListCell.swift */; };
 		391531B52228ED5800EE5574 /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531B22228ED5800EE5574 /* ProductDetailCell.swift */; };
+		391531B7222915A900EE5574 /* RankingProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391531B6222915A900EE5574 /* RankingProductListViewController.swift */; };
 		47BB57EFDCB21A2D51DED10A /* Pods_ECommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F180F40C623D01B76CC8EC /* Pods_ECommerce.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		391531B02228ED5800EE5574 /* ProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		391531B12228ED5800EE5574 /* ProductRankListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRankListCell.swift; sourceTree = "<group>"; };
 		391531B22228ED5800EE5574 /* ProductDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
+		391531B6222915A900EE5574 /* RankingProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingProductListViewController.swift; sourceTree = "<group>"; };
 		CB5FC6F0BCC9D9D9F46BEE50 /* Pods-ECommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECommerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-ECommerce/Pods-ECommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E6F180F40C623D01B76CC8EC /* Pods_ECommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				391531852228642D00EE5574 /* RankingViewController.swift */,
+				391531B6222915A900EE5574 /* RankingProductListViewController.swift */,
 			);
 			path = Ranking;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				3915316C22285D5700EE5574 /* AppDelegate.swift in Sources */,
 				391531982228693000EE5574 /* Tax.swift in Sources */,
 				391531862228642D00EE5574 /* RankingViewController.swift in Sources */,
+				391531B7222915A900EE5574 /* RankingProductListViewController.swift in Sources */,
 				391531B52228ED5800EE5574 /* ProductDetailCell.swift in Sources */,
 				3915319A2228693000EE5574 /* Variant.swift in Sources */,
 				391531A122286A8900EE5574 /* ApiManager.swift in Sources */,
